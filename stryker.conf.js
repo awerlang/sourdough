@@ -13,7 +13,15 @@ module.exports = {
   mutator: {
     plugins: []
   },
-  jest: {},
+  jest: {
+    config: {
+      globals: {
+        "ts-jest": {
+          diagnostics: false
+        }
+      }
+    }
+  },
   reporters: ["progress", "clear-text", "html"],
   coverageAnalysis: "off"
 };
