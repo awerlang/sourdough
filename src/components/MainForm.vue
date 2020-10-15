@@ -10,25 +10,12 @@
         min="1"
       />
       <Field
-        v-model.number="recipe.water"
-        label="Water (%)"
+        v-for="item in recipe.ingredients"
+        :key="item.name"
+        v-model.number="item.amount"
+        :label="item.name + ' (%)'"
         required
         min="1"
-        max="100"
-        step="0.1"
-      />
-      <Field
-        v-model.number="recipe.starter"
-        label="Starter (%)"
-        required
-        min="1"
-        max="100"
-        step="0.1"
-      />
-      <Field
-        v-model.number="recipe.salt"
-        label="Salt (%)"
-        min="0"
         max="100"
         step="0.1"
       />
@@ -46,7 +33,7 @@ import { useRecipeBuilder } from "@/composables/useRecipeBuilder";
 import Field from "./Field.vue";
 import Ingredients from "./Ingredients.vue";
 
-const sampleRecipe = new Recipe("Sample", 72, 15, 2);
+const sampleRecipe = Recipe.sourdough("Sample", 72, 15, 2);
 
 export default defineComponent({
   components: {

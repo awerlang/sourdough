@@ -2,7 +2,7 @@ import { useRecipeBuilder } from "@/composables/useRecipeBuilder";
 import { Recipe, IngredientList } from "@/utils/Recipe";
 
 function getRecipe() {
-  const recipe = new Recipe("Sample", 70, 20, 2);
+  const recipe = Recipe.sourdough("Sample", 70, 20, 2);
   jest.spyOn(recipe, "build").mockImplementation(() => new IngredientList());
   return recipe;
 }

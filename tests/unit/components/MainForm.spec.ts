@@ -10,9 +10,10 @@ test("renders initial value", () => {
       <fieldset>
         <legend>Formula</legend>
         <div><label>Total dough weight <input type="number" modelmodifiers="[object Object]" required="" min="1"></label></div>
+        <div><label>Flour (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
         <div><label>Water (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
         <div><label>Starter (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
-        <div><label>Salt (%) <input type="number" modelmodifiers="[object Object]" min="0" max="100" step="0.1"></label></div>
+        <div><label>Salt (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
       </fieldset>
     </form>
     <h2>Ingredient List</h2>
