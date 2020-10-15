@@ -12,6 +12,7 @@ import { defineComponent } from "vue";
 import { useModelValue } from "@/composables/useModelValue";
 
 export default defineComponent({
+  inheritAttrs: false,
   props: {
     label: {
       type: String,
