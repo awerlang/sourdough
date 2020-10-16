@@ -1,9 +1,14 @@
 import { mount } from "@vue/test-utils";
 import MainForm from "@/components/MainForm.vue";
 
+test("component defition", () => {
+  expect(MainForm.components?.Field).toBeDefined();
+});
+
 test("renders initial value", () => {
   const wrapper = mount(MainForm);
 
+  expect(wrapper.vm.recipe.name).toBe("Sample");
   expect(wrapper.html()).toMatchInlineSnapshot(`
     <h1>Sourdough Expert</h1>
     <form>

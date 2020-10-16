@@ -1,6 +1,11 @@
 import { mount } from "@vue/test-utils";
 import Field from "@/components/Field.vue";
 
+test("component defition", () => {
+  expect(Field.props.label.required).toBe(true);
+  expect(Field.props.modelValue.required).toBe(true);
+});
+
 test("has a `value` model", () => {
   const wrapper = mount(Field, {
     props: {
