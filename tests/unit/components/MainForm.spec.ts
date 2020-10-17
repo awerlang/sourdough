@@ -1,8 +1,19 @@
 import { mount } from "@vue/test-utils";
 import MainForm from "@/components/MainForm.vue";
+import RecipeList from "@/components/RecipeList.vue";
+import { recipes } from "@/utils/Recipe";
 
 test("component defition", () => {
   expect(MainForm.components?.Field).toBeDefined();
+});
+
+test("renders initial value", async () => {
+  const wrapper = mount(MainForm);
+
+  const select = wrapper.getComponent(RecipeList);
+  select.get("option").element.selected = true;
+  await select.trigger("change");
+  expect(wrapper.vm.recipe.name).toBe(recipes[0].name);
 });
 
 test("renders initial value", () => {
@@ -12,13 +23,19 @@ test("renders initial value", () => {
   expect(wrapper.html()).toMatchInlineSnapshot(`
     <h1>Sourdough Expert</h1>
     <form>
+      <div><label>Total dough weight <input type="number" modelmodifiers="[object Object]" required="" min="1"></label></div>
+      <div><label> Recipe <select>
+            <option value="[object Object]">Sourdough Bread with All-Purpose Flour</option>
+            <option value="[object Object]">Beginner’s Sourdough Bread Formula</option>
+            <option value="[object Object]">Fifty - Fifty Whole Wheat Sourdough Bread</option>
+            <option value="[object Object]">My Best Sourdough Recipe</option>
+          </select></label></div>
       <fieldset>
         <legend>Formula</legend>
-        <div><label>Total dough weight <input type="number" modelmodifiers="[object Object]" required="" min="1"></label></div>
-        <div><label>Flour (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
-        <div><label>Water (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
-        <div><label>Starter (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
-        <div><label>Salt (%) <input type="number" modelmodifiers="[object Object]" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label>Flour (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label>Water (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label>Starter (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label>Salt (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
       </fieldset>
     </form>
     <h2>Ingredient List</h2>

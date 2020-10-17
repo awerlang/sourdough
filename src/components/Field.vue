@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, toRef } from "vue";
 import { useModelValue } from "@/composables/useModelValue";
 
 export default defineComponent({
@@ -19,12 +19,13 @@ export default defineComponent({
       required: true
     },
     modelValue: {
-      type: Number,
+      type: [Number, String],
       required: true
     }
   },
+  emits: ["update:modelValue"],
   setup(props, context) {
-    return useModelValue(props.modelValue, context);
+    return useModelValue(toRef(props, "modelValue"), context);
   }
 });
 </script>

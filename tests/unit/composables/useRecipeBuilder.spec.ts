@@ -28,3 +28,14 @@ test("updates ingredients on weigth change", () => {
   expect(comp.ingredients.value).toStrictEqual(new IngredientList());
   expect(recipe.build).toHaveBeenCalledTimes(1);
 });
+
+test("replaces recipe", () => {
+  const recipe = getRecipe();
+  const comp = useRecipeBuilder(1000, recipe);
+
+  const newRecipe = new Recipe("", new IngredientList());
+  comp.replaceRecipe(newRecipe);
+
+  expect(comp.recipe.value).toStrictEqual(newRecipe);
+  expect(comp.recipe.value).not.toStrictEqual(recipe);
+});

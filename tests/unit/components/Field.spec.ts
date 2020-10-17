@@ -4,6 +4,8 @@ import Field from "@/components/Field.vue";
 test("component defition", () => {
   expect(Field.props.label.required).toBe(true);
   expect(Field.props.modelValue.required).toBe(true);
+  expect(Field.props.modelValue.type).toStrictEqual([Number, String]);
+  expect(Field.emits).toStrictEqual(["update:modelValue"]);
 });
 
 test("has a `value` model", () => {

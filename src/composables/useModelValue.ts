@@ -1,18 +1,19 @@
-import { computed, ref, SetupContext } from "vue";
+import { computed, SetupContext, Ref } from "vue";
 
-export function useModelValue(modelValue: string | number, ctx: SetupContext) {
-  const newVal = ref(modelValue);
+export function useModelValue(
+  modelValue: Ref<string | number>,
+  ctx: SetupContext<"update:modelValue"[]>
+) {
   const value = computed<string | number>({
     get() {
-      return newVal.value;
+      return modelValue.value;
     },
     set(val) {
-      newVal.value = val;
       ctx.emit("update:modelValue", val);
-    }
+    },
   });
 
   return {
-    value
+    value,
   };
 }

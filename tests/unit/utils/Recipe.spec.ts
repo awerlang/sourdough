@@ -1,4 +1,33 @@
-import { Ingredient, IngredientList, recipes } from "@/utils/Recipe";
+import { Ingredient, IngredientList, recipes, Recipe } from "@/utils/Recipe";
+
+describe("Ingredient:", () => {
+  test("clone()", () => {
+    const item = new Ingredient("", 0);
+    const newItem = item.clone();
+    expect(newItem).not.toBe(item);
+    expect(newItem).toStrictEqual(item);
+  });
+});
+
+describe("IngredientList:", () => {
+  test("clone()", () => {
+    const item = new IngredientList(new Ingredient("", 0));
+    const newItem = item.clone();
+    expect(newItem).not.toBe(item);
+    expect(newItem[0]).not.toBe(item[0]);
+    expect(newItem).toStrictEqual(item);
+  });
+});
+
+describe("Recipe:", () => {
+  test("clone()", () => {
+    const item = new Recipe("", new IngredientList(new Ingredient("", 0)));
+    const newItem = item.clone();
+    expect(newItem).not.toBe(item);
+    expect(newItem.ingredients).not.toBe(item.ingredients);
+    expect(newItem).toStrictEqual(item);
+  });
+});
 
 test("sourdough Bread with All-Purpose Flour", () => {
   const recipe = recipes[0];
