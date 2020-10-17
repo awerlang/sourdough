@@ -41,7 +41,9 @@ export default defineComponent({
     Ingredients
   },
   setup() {
-    const initialRecipe = Recipe.sourdough("Sample", 72, 15, 2);
+    const initialRecipe = Recipe.sourdough("Sample", 72, 15, 2, [
+      ["Flour", 100]
+    ]);
     return useRecipeBuilder(1000, initialRecipe);
   },
   methods: {

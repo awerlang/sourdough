@@ -37,7 +37,7 @@ test("sourdough Bread with All-Purpose Flour", () => {
   expect(list.total()).toBe(900);
   expect(list).toStrictEqual(
     new IngredientList(
-      new Ingredient("Flour", 459),
+      new Ingredient("All-purpose white Flour", 459),
       new Ingredient("Water", 340),
       new Ingredient("Starter", 92),
       new Ingredient("Salt", 9)
@@ -53,7 +53,9 @@ test("beginner’s Sourdough Bread Formula", () => {
   expect(list.total()).toBe(1800);
   expect(list).toStrictEqual(
     new IngredientList(
-      new Ingredient("Flour", 1014),
+      new Ingredient("Bread Flour", 811),
+      new Ingredient("Whole Wheat Flour", 152),
+      new Ingredient("Rye Flour", 51),
       new Ingredient("Water", 730),
       new Ingredient("Starter", 38),
       new Ingredient("Salt", 18)
@@ -69,7 +71,8 @@ test("fifty - Fifty Whole Wheat Sourdough Bread", () => {
   expect(list.total()).toBe(1800);
   expect(list).toStrictEqual(
     new IngredientList(
-      new Ingredient("Flour", 906),
+      new Ingredient("Bread Flour", 453),
+      new Ingredient("Whole Wheat Flour", 453),
       new Ingredient("Water", 734),
       new Ingredient("Starter", 143),
       new Ingredient("Salt", 17)
@@ -85,7 +88,8 @@ test("my Best Sourdough Recipe", () => {
   expect(list.total()).toBe(1800);
   expect(list).toStrictEqual(
     new IngredientList(
-      new Ingredient("Flour", 936),
+      new Ingredient("Bread Flour", 842),
+      new Ingredient("Whole Wheat Flour", 94),
       new Ingredient("Water", 815),
       new Ingredient("Starter", 30),
       new Ingredient("Salt", 19)

@@ -23,11 +23,17 @@ export class IngredientList extends Array<Ingredient> {
 export class Recipe {
   constructor(readonly name: string, readonly ingredients: IngredientList) {}
 
-  static sourdough(name: string, water: number, starter: number, salt: number) {
+  static sourdough(
+    name: string,
+    water: number,
+    starter: number,
+    salt: number,
+    flour: [string, number][]
+  ) {
     return new Recipe(
       name,
       new IngredientList(
-        new Ingredient("Flour", 100),
+        ...flour.map(([flour, amount]) => new Ingredient(flour, amount)),
         new Ingredient("Water", water),
         new Ingredient("Starter", starter),
         new Ingredient("Salt", salt)
@@ -51,8 +57,20 @@ export class Recipe {
 }
 
 export const recipes: readonly Recipe[] = [
-  Recipe.sourdough("Sourdough Bread with All-Purpose Flour", 74, 20, 1.9),
-  Recipe.sourdough("Beginner’s Sourdough Bread Formula", 72, 3.75, 1.8),
-  Recipe.sourdough("Fifty - Fifty Whole Wheat Sourdough Bread", 81, 15.8, 1.9),
-  Recipe.sourdough("My Best Sourdough Recipe", 87, 3.2, 2),
+  Recipe.sourdough("Sourdough Bread with All-Purpose Flour", 74, 20, 1.9, [
+    ["All-purpose white Flour", 100],
+  ]),
+  Recipe.sourdough("Beginner’s Sourdough Bread Formula", 72, 3.75, 1.8, [
+    ["Bread Flour", 80],
+    ["Whole Wheat Flour", 15],
+    ["Rye Flour", 5],
+  ]),
+  Recipe.sourdough("Fifty - Fifty Whole Wheat Sourdough Bread", 81, 15.8, 1.9, [
+    ["Bread Flour", 50],
+    ["Whole Wheat Flour", 50],
+  ]),
+  Recipe.sourdough("My Best Sourdough Recipe", 87, 3.2, 2, [
+    ["Bread Flour", 90],
+    ["Whole Wheat Flour", 10],
+  ]),
 ];
