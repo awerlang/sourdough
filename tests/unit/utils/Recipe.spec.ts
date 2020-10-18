@@ -96,3 +96,43 @@ test("my Best Sourdough Recipe", () => {
     )
   );
 });
+
+test("Pizza", () => {
+  const recipe = recipes[4];
+  const list = recipe.build(1000);
+
+  expect(recipe.name).toBe("Pizza");
+  expect(list.total()).toBe(1000);
+  expect(list).toStrictEqual(
+    new IngredientList(
+      new Ingredient("Semola", 489),
+      new Ingredient("Whole Wheat Flour", 54),
+      new Ingredient("Water", 364),
+      new Ingredient("Starter", 82),
+      new Ingredient("Salt", 11)
+    )
+  );
+});
+
+test("Waffles", () => {
+  const recipe = recipes[5];
+  const list = recipe.build(900);
+
+  expect(recipe.name).toBe("Waffles");
+  expect(list.total()).toBe(900);
+  expect(list).toStrictEqual(
+    new IngredientList(
+      new Ingredient("Starter", 239),
+      new Ingredient("Milk", 222),
+      new Ingredient("White Flour", 89),
+      new Ingredient("Whole Wheat Flour", 24),
+      new Ingredient("Rye Flour", 6),
+      new Ingredient("Sugar", 119),
+      new Ingredient("Butter", 48),
+      new Ingredient("Egg", 143),
+      new Ingredient("Vanilla", 2),
+      new Ingredient("Salt", 2),
+      new Ingredient("Baking Soda", 6)
+    )
+  );
+});

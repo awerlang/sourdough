@@ -23,6 +23,17 @@ export class IngredientList extends Array<Ingredient> {
 export class Recipe {
   constructor(readonly name: string, readonly ingredients: IngredientList) {}
 
+  static list(name: string, ingredients: [string, number][]) {
+    return new Recipe(
+      name,
+      new IngredientList(
+        ...ingredients.map(
+          ([ingredient, amount]) => new Ingredient(ingredient, amount)
+        )
+      )
+    );
+  }
+
   static sourdough(
     name: string,
     water: number,
@@ -30,15 +41,12 @@ export class Recipe {
     salt: number,
     flour: [string, number][]
   ) {
-    return new Recipe(
-      name,
-      new IngredientList(
-        ...flour.map(([flour, amount]) => new Ingredient(flour, amount)),
-        new Ingredient("Water", water),
-        new Ingredient("Starter", starter),
-        new Ingredient("Salt", salt)
-      )
-    );
+    return Recipe.list(name, [
+      ...flour,
+      ["Water", water],
+      ["Starter", starter],
+      ["Salt", salt],
+    ]);
   }
 
   clone() {
@@ -72,5 +80,22 @@ export const recipes: readonly Recipe[] = [
   Recipe.sourdough("My Best Sourdough Recipe", 87, 3.2, 2, [
     ["Bread Flour", 90],
     ["Whole Wheat Flour", 10],
+  ]),
+  Recipe.sourdough("Pizza", 67, 15, 2, [
+    ["Semola", 90],
+    ["Whole Wheat Flour", 10],
+  ]),
+  Recipe.list("Waffles", [
+    ["Starter", 200],
+    ["Milk", 186],
+    ["White Flour", 75],
+    ["Whole Wheat Flour", 20],
+    ["Rye Flour", 5],
+    ["Sugar", 100],
+    ["Butter", 40],
+    ["Egg", 120],
+    ["Vanilla", 2],
+    ["Salt", 2],
+    ["Baking Soda", 5],
   ]),
 ];

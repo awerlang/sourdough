@@ -29,6 +29,8 @@ test("renders initial value", () => {
             <option value="[object Object]">Beginner’s Sourdough Bread Formula</option>
             <option value="[object Object]">Fifty - Fifty Whole Wheat Sourdough Bread</option>
             <option value="[object Object]">My Best Sourdough Recipe</option>
+            <option value="[object Object]">Pizza</option>
+            <option value="[object Object]">Waffles</option>
           </select></label></div>
       <fieldset>
         <legend>Formula</legend>
