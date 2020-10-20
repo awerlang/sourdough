@@ -1,5 +1,5 @@
 <template>
-  <select v-model="selected" @change="$emit('select', selected)">
+  <select v-model="selected" class="block" @change="$emit('select', selected)">
     <option v-for="item in recipes" :key="item.name" :value="item">
       {{ item.name }}
     </option>
@@ -23,8 +23,4 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-select {
-  display: block;
-}
-</style>
+<style lang="scss" scoped></style>

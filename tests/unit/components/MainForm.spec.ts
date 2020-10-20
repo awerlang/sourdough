@@ -23,8 +23,8 @@ test("renders initial value", () => {
   expect(wrapper.html()).toMatchInlineSnapshot(`
     <h1>Sourdough Expert</h1>
     <form>
-      <div><label>Total dough weight <input type="number" modelmodifiers="[object Object]" required="" min="1"></label></div>
-      <div><label> Recipe <select>
+      <div><label class="block">Total dough weight <input class="block invalid:app-border-error" type="number" modelmodifiers="[object Object]" required="" min="1"></label></div>
+      <div><label> Recipe <select class="block">
             <option value="[object Object]">Sourdough Bread with All-Purpose Flour</option>
             <option value="[object Object]">Beginner’s Sourdough Bread Formula</option>
             <option value="[object Object]">Fifty - Fifty Whole Wheat Sourdough Bread</option>
@@ -34,10 +34,10 @@ test("renders initial value", () => {
           </select></label></div>
       <fieldset>
         <legend>Formula</legend>
-        <div><label>Flour (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
-        <div><label>Water (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
-        <div><label>Starter (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
-        <div><label>Salt (%) <input type="number" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label class="block">Flour (%) <input class="block invalid:app-border-error" type="number" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label class="block">Water (%) <input class="block invalid:app-border-error" type="number" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label class="block">Starter (%) <input class="block invalid:app-border-error" type="number" required="" min="1" max="100" step="0.1"></label></div>
+        <div><label class="block">Salt (%) <input class="block invalid:app-border-error" type="number" required="" min="1" max="100" step="0.1"></label></div>
       </fieldset>
     </form>
     <h2>Ingredient List</h2>

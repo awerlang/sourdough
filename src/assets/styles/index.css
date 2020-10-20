@@ -1,0 +1,18 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+#app {
+  @apply font-sans;
+  @apply text-gray-900;
+  @apply antialiased;
+}
+
+.app-border-error {
+  @apply border-2;
+  @apply border-red-300;
+}
+
+.invalid\:app-border-error:invalid {
+  @apply app-border-error;
+}

@@ -1,8 +1,13 @@
 <template>
   <div>
-    <label>
+    <label class="block">
       {{ label }}
-      <input v-model.number="value" type="number" v-bind="$attrs" />
+      <input
+        v-model.number="value"
+        class="block invalid:app-border-error"
+        type="number"
+        v-bind="$attrs"
+      />
     </label>
   </div>
 </template>
@@ -30,12 +35,4 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-label,
-input {
-  display: block;
-}
-input:invalid {
-  border: solid 1px red;
-}
-</style>
+<style lang="scss" scoped></style>
