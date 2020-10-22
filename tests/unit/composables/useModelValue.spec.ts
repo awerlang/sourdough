@@ -1,11 +1,11 @@
-import { ref } from "vue";
+import { ref, SetupContext } from "vue";
 import { useModelValue } from "@/composables/useModelValue";
 
-function mockContext() {
+function mockContext(): SetupContext<"update:modelValue"[]> {
   return {
     emit: jest.fn(),
-    attrs: jest.fn() as any,
-    slots: jest.fn() as any,
+    attrs: {},
+    slots: {}
   };
 }
 

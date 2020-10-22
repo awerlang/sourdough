@@ -3,11 +3,11 @@ import MainForm from "@/components/MainForm.vue";
 import RecipeList from "@/components/RecipeList.vue";
 import { recipes } from "@/utils/Recipe";
 
-test("component defition", () => {
+test("component definition", () => {
   expect(MainForm.components?.Field).toBeDefined();
 });
 
-test("renders initial value", async () => {
+test("selected recipe", async () => {
   const wrapper = mount(MainForm);
 
   const select = wrapper.getComponent(RecipeList);

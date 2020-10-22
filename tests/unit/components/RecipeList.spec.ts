@@ -8,5 +8,5 @@ test("component defition", () => {
 test("has a `selected` model", () => {
   const wrapper = mount(RecipeList);
 
-  expect(wrapper.vm.selected).toBe(null);
+  expect(wrapper.vm.selected).toBeNull();
 });
