@@ -1,27 +1,32 @@
 <template>
-  <h1>Sourdough Expert</h1>
-  <form>
-    <Field
-      v-model.number="weight"
-      label="Total dough weight"
-      required
-      min="1"
-    />
-    <div>
-      <label>
-        Recipe
-        <RecipeList @select="recipeSelected" />
-      </label>
-    </div>
+  <div class="prose">
+    <h1>Sourdough Expert</h1>
+    <blockquote>
+      Start with a recipe from a curated list, and get a weighted ingredient
+      list for your needs
+    </blockquote>
+    <form class="max-w-sm">
+      <Field
+        v-model.number="weight"
+        label="Total dough weight"
+        required
+        min="1"
+      />
+      <div>
+        <label>
+          Recipe
+          <RecipeList @select="recipeSelected" />
+        </label>
+      </div>
 
-    <fieldset>
-      <legend>Formula</legend>
-      <Formula :recipe="recipe" />
-    </fieldset>
-  </form>
+      <fieldset>
+        <legend>Formula</legend>
+        <Formula :recipe="recipe" />
+      </fieldset>
+    </form>
 
-  <h2>Ingredient List</h2>
-  <Ingredients :ingredients="ingredients" />
+    <Ingredients :ingredients="ingredients" />
+  </div>
 </template>
 
 <script lang="ts">

@@ -6,6 +6,12 @@
   @apply font-sans;
   @apply text-gray-900;
   @apply antialiased;
+  @apply bg-gray-100;
+
+  width: clamp(50%, 680px, 100%);
+  height: 100vh;
+  margin: auto;
+  padding: 32px;
 }
 
 .app-border-error {

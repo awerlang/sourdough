@@ -4,7 +4,7 @@
       {{ label }}
       <input
         v-model.number="value"
-        class="block invalid:app-border-error"
+        class="block w-full h-8 invalid:app-border-error focus:outline-none focus:shadow-outline focus:border-blue-300"
         type="number"
         v-bind="$attrs"
       />
