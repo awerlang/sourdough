@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #app {
   @apply font-sans;
@@ -14,11 +14,11 @@
   padding: 32px;
 }
 
-.app-border-error {
-  @apply border-2;
-  @apply border-red-300;
-}
-
-.invalid\:app-border-error:invalid {
-  @apply app-border-error;
+@layer utilities {
+  @variants hover, focus, invalid {
+    .app-border-error {
+      @apply border-2;
+      @apply border-red-300;
+    }
+  }
 }
