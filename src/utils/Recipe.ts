@@ -12,7 +12,7 @@ export class Ingredient {
 
 export class IngredientList extends Array<Ingredient> {
   clone(): IngredientList {
-    return new IngredientList(...this.map((it) => it.clone()));
+    return new IngredientList(...this.map(it => it.clone()));
   }
 
   total(): number {
@@ -45,7 +45,7 @@ export class Recipe {
       ...flour,
       ["Water", water],
       ["Starter", starter],
-      ["Salt", salt],
+      ["Salt", salt]
     ]);
   }
 
@@ -57,7 +57,7 @@ export class Recipe {
     const total = this.ingredients.total();
     const flour = weight / total;
     const items = new IngredientList(
-      ...this.ingredients.map((it) => it.scale(flour))
+      ...this.ingredients.map(it => it.scale(flour))
     );
     items[0].amount += weight - items.total();
     return items;
@@ -66,24 +66,24 @@ export class Recipe {
 
 export const recipes: readonly Recipe[] = [
   Recipe.sourdough("Sourdough Bread with All-Purpose Flour", 74, 20, 1.9, [
-    ["All-purpose white Flour", 100],
+    ["All-purpose white Flour", 100]
   ]),
   Recipe.sourdough("Beginner’s Sourdough Bread Formula", 72, 3.75, 1.8, [
     ["Bread Flour", 80],
     ["Whole Wheat Flour", 15],
-    ["Rye Flour", 5],
+    ["Rye Flour", 5]
   ]),
   Recipe.sourdough("Fifty - Fifty Whole Wheat Sourdough Bread", 81, 15.8, 1.9, [
     ["Bread Flour", 50],
-    ["Whole Wheat Flour", 50],
+    ["Whole Wheat Flour", 50]
   ]),
   Recipe.sourdough("My Best Sourdough Recipe", 87, 3.2, 2, [
     ["Bread Flour", 90],
-    ["Whole Wheat Flour", 10],
+    ["Whole Wheat Flour", 10]
   ]),
   Recipe.sourdough("Pizza", 67, 15, 2, [
     ["Semola", 90],
-    ["Whole Wheat Flour", 10],
+    ["Whole Wheat Flour", 10]
   ]),
   Recipe.list("Waffles", [
     ["Starter", 200],
@@ -96,6 +96,6 @@ export const recipes: readonly Recipe[] = [
     ["Egg", 120],
     ["Vanilla", 2],
     ["Salt", 2],
-    ["Baking Soda", 5],
-  ]),
+    ["Baking Soda", 5]
+  ])
 ];

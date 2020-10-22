@@ -10,10 +10,10 @@ export function useModelValue(
     },
     set(val) {
       ctx.emit("update:modelValue", val);
-    },
+    }
   });
 
   return {
-    value,
+    value
   };
 }

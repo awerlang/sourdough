@@ -1,7 +1,7 @@
 import { Ingredient, IngredientList, recipes, Recipe } from "@/utils/Recipe";
 
 describe("Ingredient:", () => {
-  test("clone()", () => {
+  it("clone()", () => {
     const item = new Ingredient("", 0);
     const newItem = item.clone();
     expect(newItem).not.toBe(item);
@@ -10,7 +10,7 @@ describe("Ingredient:", () => {
 });
 
 describe("IngredientList:", () => {
-  test("clone()", () => {
+  it("clone()", () => {
     const item = new IngredientList(new Ingredient("", 0));
     const newItem = item.clone();
     expect(newItem).not.toBe(item);
@@ -20,7 +20,7 @@ describe("IngredientList:", () => {
 });
 
 describe("Recipe:", () => {
-  test("clone()", () => {
+  it("clone()", () => {
     const item = new Recipe("", new IngredientList(new Ingredient("", 0)));
     const newItem = item.clone();
     expect(newItem).not.toBe(item);
@@ -97,7 +97,7 @@ test("my Best Sourdough Recipe", () => {
   );
 });
 
-test("Pizza", () => {
+test("pizza", () => {
   const recipe = recipes[4];
   const list = recipe.build(1000);
 
@@ -114,7 +114,7 @@ test("Pizza", () => {
   );
 });
 
-test("Waffles", () => {
+test("waffles", () => {
   const recipe = recipes[5];
   const list = recipe.build(900);
 

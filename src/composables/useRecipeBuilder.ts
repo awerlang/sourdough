@@ -13,6 +13,6 @@ export function useRecipeBuilder(initialWeight: number, initialRecipe: Recipe) {
     weight,
     recipe,
     ingredients,
-    replaceRecipe,
+    replaceRecipe
   };
 }

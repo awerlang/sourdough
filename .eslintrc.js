@@ -18,7 +18,13 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "jest/prefer-expect-assertions": "off",
-    "jest/require-top-level-describe": "off"
+    "jest/require-top-level-describe": "off",
+    "jest/lowercase-name": [
+      "error",
+      {
+        ignoreTopLevelDescribe: true
+      }
+    ]
   },
   overrides: [
     {
