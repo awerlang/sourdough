@@ -9,9 +9,9 @@
   @apply bg-gray-100;
 
   width: clamp(50%, 680px, 100%);
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
-  padding: 32px;
+  padding: 24px;
 }
 
 @layer utilities {

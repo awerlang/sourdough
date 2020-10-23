@@ -5,28 +5,28 @@
       Start with a recipe from a curated list, and get a weighted ingredient
       list for your needs
     </blockquote>
-    <form class="max-w-sm">
-      <Field
-        v-model.number="weight"
-        label="Total dough weight"
-        required
-        min="1"
-      />
-      <div>
-        <label>
-          Recipe
-          <RecipeList @select="recipeSelected" />
-        </label>
-      </div>
-
-      <fieldset>
-        <legend>Formula</legend>
-        <Formula :recipe="recipe" />
-      </fieldset>
-    </form>
-
-    <Ingredients :ingredients="ingredients" />
   </div>
+  <form class="max-w-sm my-8">
+    <Field
+      v-model.number="weight"
+      label="Total dough weight"
+      required
+      min="1"
+    />
+    <div>
+      <label class="block">
+        Recipe
+        <RecipeList @select="recipeSelected" />
+      </label>
+    </div>
+
+    <fieldset>
+      <legend>Formula</legend>
+      <Formula :recipe="recipe" />
+    </fieldset>
+  </form>
+
+  <Ingredients :ingredients="ingredients" />
 </template>
 
 <script lang="ts">
