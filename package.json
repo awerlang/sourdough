@@ -8,6 +8,7 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "test": "jest --watch --coverage",
+    "test:ci": "jest --ci",
     "stryker": "stryker run"
   },
   "dependencies": {
