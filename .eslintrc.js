@@ -37,6 +37,12 @@ module.exports = {
       }
     },
     {
+      files: ["*.d.ts"],
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
       files: ["*.js"],
       rules: {
         "@typescript-eslint/no-var-requires": "off"
