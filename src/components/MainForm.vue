@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Recipe } from "@/utils/Recipe.ts";
+import { Recipe } from "@/utils/Recipe";
 import { useRecipeBuilder } from "@/composables/useRecipeBuilder";
 import RecipeList from "./RecipeList.vue";
 import Field from "./Field.vue";

@@ -13,6 +13,12 @@
   },
   "css.lint.unknownAtRules": "ignore",
   "eslint.format.enable": true,
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "vue"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

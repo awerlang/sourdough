@@ -18,13 +18,9 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "jest/prefer-expect-assertions": "off",
+    "jest/require-hook": "off",
     "jest/require-top-level-describe": "off",
-    "jest/lowercase-name": [
-      "error",
-      {
-        ignoreTopLevelDescribe: true
-      }
-    ]
+    "vue/multi-word-component-names": "off",
   },
   overrides: [
     {
@@ -36,17 +32,5 @@ module.exports = {
         jest: true
       }
     },
-    {
-      files: ["*.d.ts"],
-      rules: {
-        "@typescript-eslint/no-explicit-any": "off"
-      }
-    },
-    {
-      files: ["*.js"],
-      rules: {
-        "@typescript-eslint/no-var-requires": "off"
-      }
-    }
   ]
 };

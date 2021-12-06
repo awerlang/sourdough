@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Recipe } from "@/utils/Recipe.ts";
+import { Recipe } from "@/utils/Recipe";
 import Field from "@/components/Field.vue";
 
 export default defineComponent({

@@ -4,6 +4,7 @@ import { useModelValue } from "@/composables/useModelValue";
 function mockContext(): SetupContext<"update:modelValue"[]> {
   return {
     emit: jest.fn(),
+    expose: jest.fn(),
     attrs: {},
     slots: {}
   };

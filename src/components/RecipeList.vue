@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { recipes } from "@/utils/Recipe.ts";
+import { recipes } from "@/utils/Recipe";
 
 export default defineComponent({
   emits: ["select"],

@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { IngredientList } from "@/utils/Recipe.ts";
+import { IngredientList } from "@/utils/Recipe";
 
 export default defineComponent({
   props: {
