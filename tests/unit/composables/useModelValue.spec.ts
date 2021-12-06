@@ -6,7 +6,7 @@ function mockContext(): SetupContext<"update:modelValue"[]> {
     emit: jest.fn(),
     expose: jest.fn(),
     attrs: {},
-    slots: {}
+    slots: {},
   };
 }
 

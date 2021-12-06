@@ -18,12 +18,12 @@ export default defineComponent({
   emits: ["select"],
   data() {
     return {
-      selected: null
+      selected: null,
     };
   },
   computed: {
-    recipes: () => recipes
-  }
+    recipes: () => recipes,
+  },
 });
 </script>
 

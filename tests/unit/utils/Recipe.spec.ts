@@ -1,6 +1,6 @@
 import { Ingredient, IngredientList, recipes, Recipe } from "@/utils/Recipe";
 
-describe("Ingredient:", () => {
+describe("ingredient:", () => {
   it("clone()", () => {
     const item = new Ingredient("", 0);
     const newItem = item.clone();
@@ -9,7 +9,7 @@ describe("Ingredient:", () => {
   });
 });
 
-describe("IngredientList:", () => {
+describe("ingredientList:", () => {
   it("clone()", () => {
     const item = new IngredientList(new Ingredient("", 0));
     const newItem = item.clone();
@@ -19,7 +19,7 @@ describe("IngredientList:", () => {
   });
 });
 
-describe("Recipe:", () => {
+describe("recipe:", () => {
   it("clone()", () => {
     const item = new Recipe("", new IngredientList(new Ingredient("", 0)));
     const newItem = item.clone();

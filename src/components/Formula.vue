@@ -21,9 +21,9 @@ export default defineComponent({
   props: {
     recipe: {
       type: Recipe,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 });
 </script>
 

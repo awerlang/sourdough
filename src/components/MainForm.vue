@@ -43,19 +43,19 @@ export default defineComponent({
     RecipeList,
     Field,
     Formula,
-    Ingredients
+    Ingredients,
   },
   setup() {
     const initialRecipe = Recipe.sourdough("Sample", 72, 15, 2, [
-      ["Flour", 100]
+      ["Flour", 100],
     ]);
     return useRecipeBuilder(1000, initialRecipe);
   },
   methods: {
     recipeSelected(val: Recipe) {
       this.replaceRecipe(val);
-    }
-  }
+    },
+  },
 });
 </script>
 

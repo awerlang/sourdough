@@ -6,12 +6,12 @@ module.exports = {
   variants: {},
   plugins: [
     require("@tailwindcss/typography"),
-    plugin(function({ addVariant, e }) {
+    plugin(function ({ addVariant, e }) {
       addVariant("invalid", ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
           return `.${e(`invalid${separator}${className}`)}:invalid`;
         });
       });
-    })
-  ]
+    }),
+  ],
 };

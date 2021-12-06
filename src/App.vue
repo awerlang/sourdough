@@ -9,8 +9,8 @@ import MainForm from "@/components/MainForm.vue";
 export default defineComponent({
   name: "App",
   components: {
-    MainForm
-  }
+    MainForm,
+  },
 });
 </script>
 

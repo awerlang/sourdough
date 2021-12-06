@@ -30,9 +30,9 @@ export default defineComponent({
   props: {
     ingredients: {
       type: IngredientList,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 });
 </script>
 

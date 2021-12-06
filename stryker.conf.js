@@ -8,12 +8,12 @@ module.exports = {
   mutate: [
     "src/**/*.{ts,vue}",
     "!src/main.ts",
-    "!src/registerServiceWorker.ts"
+    "!src/registerServiceWorker.ts",
   ],
   testRunner: "jest",
   mutator: {
-    plugins: []
+    plugins: [],
   },
   reporters: ["progress", "clear-text", "html"],
-  coverageAnalysis: "off"
+  coverageAnalysis: "off",
 };

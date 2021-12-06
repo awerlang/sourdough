@@ -21,17 +21,17 @@ export default defineComponent({
   props: {
     label: {
       type: String,
-      required: true
+      required: true,
     },
     modelValue: {
       type: [Number, String],
-      required: true
-    }
+      required: true,
+    },
   },
   emits: ["update:modelValue"],
   setup(props, context) {
     return useModelValue(toRef(props, "modelValue"), context);
-  }
+  },
 });
 </script>
 
